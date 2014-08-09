@@ -42,7 +42,7 @@ use Monolog\Handler\StreamHandler;
 
     // Setup our Ratchet ChatRoom application
     $webSock = new Reactor($loop);
-    $webSock->listen(8000, '0.0.0.0');
+    $webSock->listen(8000, 'localhost');
     $webServer = new IoServer(           // Basic I/O with clients, aww yeah
         new WsServer(                    // Boom! WebSockets
             new PortLogger($push, 8000,    // Compare vs the almost over 9000 conns
